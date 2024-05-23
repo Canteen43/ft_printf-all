@@ -1,0 +1,3 @@
+https://cplusplus.com/reference/cstdio/printf/
+
+Insert the whole libft repository including the makefile into the ft_printf repository
