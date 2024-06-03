@@ -6,19 +6,25 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:21:06 by kweihman          #+#    #+#             */
-/*   Updated: 2024/05/22 18:44:30 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/05/31 13:47:56 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "mini_printf.c"
+#include "ft_printf.h"
 
 int	main(void)
 {
-	char	*ptr1;
-	char	*ptr2;
+	int		nbr;
+	char	*str;
+	char	*ptr;
 
-	ptr1 = "Hello";
-	ptr2 = "Girls";
-	mini_printf("Variable 1: %c, two percents: %%, Variable 2: %d", 3, 4);
+	*ptr = NULL;
+	str = NULL;
+	printf("Original printf:\n");
+	nbr = printf("%p", ptr);
+	printf("\n%d", nbr);
+	printf("\nMy printf:\n");
+	nbr = ft_printf("%p", ptr);
+	printf("\n%d\n", nbr);
 }

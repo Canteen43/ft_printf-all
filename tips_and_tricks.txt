@@ -1,3 +1,63 @@
 https://cplusplus.com/reference/cstdio/printf/
 
-Insert the whole libft repository including the makefile into the ft_printf repository
+How is libft inserted?
+	Insert the whole libft repository including the makefile into the ft_printf repository
+
+What does original printf return if too few arguments are given? Crash? Error?
+	Undefined behavior. So basically, for my printf I won't handle it. (ChatGPT)
+
+What about too many arguments?
+	Extra arguments are ignored. (ChatGPT)
+
+What does original printf do if after '%' if you have neither another '%' nor a
+	valid conversion specifier?
+	Undefined behavior. (ChatGPT)
+
+Does decimal mean int, long int or what?
+	Decimal seems to mean normal int. Original printf rejects numbers outside int limits
+	 and Gregoires printf treated d and i as equals.
+
+Do I need to include Libft-Header-Libraries again?
+	Probably not.
+
+How to call other Makefile inside Makefile?
+	$(MAKE) -C $(LIBDIR)
+
+Do x and X take long int or int?
+	Original printf only accepted unsigned int.
+
+With va_arg, if I send the va_list to another function and call va_arg and then go back to
+ the original function, will the va_list also have moved on further in the original function
+ where va_arg was not called?
+	Yes. It behaves like a pointer. (ChatGPT) This has to be confirmed.
+
+Mandatory ft_printf only handles these basics conversion specifiers without any extra specifications:
+• %c Prints a single character.
+• %s Prints a string (as defined by the common C convention).
+• %p The void * pointer argument has to be printed in hexadecimal format.
+• %d Prints a decimal (base 10) number.
+• %i Prints an integer in base 10.
+• %u Prints an unsigned decimal (base 10) number.
+• %x Prints a number in hexadecimal (base 16) lowercase format.
+• %X Prints a number in hexadecimal (base 16) uppercase format.
+• %% Prints a percent sign.
+
+---------------------------------------------------------------------------------------------------
+To do:
+	Functionalities
+		c - putchar
+		s - putstring
+		p - cast to long int, then putlongintashex
+		d - putint
+		i - putint
+		u - putunsigned int
+		x - put int or long int as hex
+		X - same with capital letters
+		% - put percent sign
+		Return number of chars written.
+
+Questions:
+	Problem: When I call va_arg(args, ...), ... already has to specify the type. But how can I know it at this point and how can I make it flexible?
+
+	Prinft handles pointers apparently. It should not seg fault.
+	
