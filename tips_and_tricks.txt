@@ -60,4 +60,12 @@ Questions:
 	Problem: When I call va_arg(args, ...), ... already has to specify the type. But how can I know it at this point and how can I make it flexible?
 
 	Prinft handles pointers apparently. It should not seg fault.
-	
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+BONUS:
+
+Manual for original printf: https://man7.org/linux/man-pages/man3/printf.3.html
+
+Command for francinette on windows:
+

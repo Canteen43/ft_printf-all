@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   legacyft_printf.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:33:01 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/05 16:50:58 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/05 16:44:43 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,6 @@
 
 # include <unistd.h>	// write()
 # include <stdarg.h>	// va_start, va_arg, va_copy, va_end
-
-typedef struct s_conv_specs
-{
-	int	left_adjusted;
-	int	zero_padded;
-	int	alt_form;
-	int	add_space;
-	int	add_plus;
-	int	field_width;
-	int	precision;
-}	t_conv_specs;
 
 int	ft_printf(const char *str, ...);
 int	ft_convert_c(int c);
