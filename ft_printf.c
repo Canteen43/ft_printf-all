@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:40:48 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/05 17:44:30 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/07 18:44:46 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int	ft_printf(const char *string, ...)
 	va_end(args);
 	return (bytes_printed);
 }
+
+sdfkjskldfhlks
+
 
 void	print_character(char **p_string, int *p_bytes_printed)
 {

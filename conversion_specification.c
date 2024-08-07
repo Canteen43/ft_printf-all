@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion_specification.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:03:41 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/05 17:44:23 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/07 18:54:23 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,38 +40,39 @@ int	get_specs(t_conv_specs *p_specs, char **p_string)
 
 int	get_flags(t_conv_specs *p_specs, char **p_string)
 {
-	while (is_flag(p_string))
+	while (char_in_str(**p_string, "-0# +"))
 	{
-		if (**p_string == "-")
-		{
-			if (p_specs->left_adjusted == 1)
-				return (-1);
-			p_specs->left_adjusted = 1;
-		}
-		if (**p_string == "0")
-			p_specs->zero_padded = 1;
-		if (**p_string == "#")
-			p_specs->left_adjusted = 1;
-		if (**p_string == " ")
-			p_specs->add_space = 1;
-		if (**p_string == "+")
-			p_specs->add_plus = 1;
+		if (value_of_spec(**p_string) == 0)
+			make value 1
+		if (value_of_spec(**p_string) == 1)
+			Return error
 		*p_string++;
 	}
+	while (char_in_str(**p_string, "0123456789"))
+		adjust field_width with atoi
+		*p_string++;
+	if (**p_string == '.')
+		*p_string++;
+	while (char_in_str(**p_string, "0123456789"))
+		adjust precision with atoi
+		*p_string++;
+	
 
 }
 
-int	is_flag(char **p_string)
+
+
+int	value_of_spec(t_conv_specs *p_specs, char a)
 {
-	if (**p_string == "-")
-		return (1);
-	if (**p_string == "0")
-		return (1);
-	if (**p_string == "#")
-		return (1);
-	if (**p_string == " ")
-		return (1);
-	if (**p_string == "+")
-		return (1);
-	return (0);
+	if (a == '-')
+		return(p_specs->left_adjusted)
+	if (a == '0')
+		return(p_specs->zero_padded)
+	if (a == '#')
+		return(p_specs->alt_form)
+	if (a == ' ')
+		return(p_specs->add_plus)
+	if (a == '+')
+		return(p_specs->add_plus)
 }
+

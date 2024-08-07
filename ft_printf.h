@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:33:01 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/05 16:50:58 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/07 18:54:25 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 
 typedef struct s_conv_specs
 {
-	int	left_adjusted;
-	int	zero_padded;
-	int	alt_form;
-	int	add_space;
-	int	add_plus;
+	// int	left_adjusted;
+	// int	zero_padded;
+	// int	alt_form;
+	// int	add_space;
+	// int	add_plus;
+	char *flags[6];
 	int	field_width;
 	int	precision;
 }	t_conv_specs;
