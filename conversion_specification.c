@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:03:41 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/07 18:54:23 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/07 20:01:11 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	handle_conversion(char **p_string, va_list args, int *p_bytes_printed)
 {
-	t_conv_specs	specs;
+	t_specs	specs;
 
 	*p_string++;
 	if (**p_string == '\0')
@@ -42,10 +42,10 @@ int	get_flags(t_conv_specs *p_specs, char **p_string)
 {
 	while (char_in_str(**p_string, "-0# +"))
 	{
-		if (value_of_spec(**p_string) == 0)
-			make value 1
-		if (value_of_spec(**p_string) == 1)
-			Return error
+		if (char_in_str(**p_string, p_specs->flags) == 0)
+			add char to flags
+		if (char_in_str(**p_string, p_specs->flags) == 0)
+			return (-1);
 		*p_string++;
 	}
 	while (char_in_str(**p_string, "0123456789"))
