@@ -67,5 +67,6 @@ BONUS:
 
 Manual for original printf: https://man7.org/linux/man-pages/man3/printf.3.html
 
-Command for francinette on windows:
-
+To do:
+	- Put field width and precision in separate function
+	- write atoi for my purposes

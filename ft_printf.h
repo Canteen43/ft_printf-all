@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:33:01 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/07 18:57:35 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/08 11:22:36 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@
 
 typedef struct s_conversion_specifications
 {
-	// int	left_adjusted;
-	// int	zero_padded;
-	// int	alt_form;
-	// int	add_space;
-	// int	add_plus;
 	char	*flags[6];
 	int		field_width;
 	int		precision;
