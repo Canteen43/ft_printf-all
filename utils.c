@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 16:22:08 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/10 13:48:22 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/10 15:10:56 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,20 @@ int	lmt_check(int value, char next)
 			if (INT_MIN % value > next - '0')
 				return (-1);
 	}
+}
+
+int	min(int a, int b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
+int	max(int a, int b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);
 }

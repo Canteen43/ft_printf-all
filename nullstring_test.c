@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 12:22:38 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/10 13:58:42 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/10 15:05:43 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(void)
 {
 	char	*str;
 
-	str = "Hi, I am Karl!";
-	printf("Result: %.-3s\n", str);
+	str = NULL;
+	printf("Result: %30.8s End!\n", str);
 	return (0);
 }
