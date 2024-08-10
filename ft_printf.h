@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:33:01 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/10 17:21:05 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/10 17:41:29 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_conversion_specifications
 {
-	char	*flags[6];
+	char	flags[6];
 	int		field_width;
 	int		precision;
 }	t_specs;
@@ -42,5 +42,7 @@ int		get_flags(t_specs *p_specs, char **p_string);
 int		get_width(t_specs *p_specs, char **p_string);
 int		get_prec(t_specs *p_specs, char **p_string);
 void	add_char_to_flags(char a, t_specs *p_specs);
+int		ft_printf(const char *string, ...);
+void	print_character(char **p_string, int *p_bytes_printed);
 
 #endif // FT_PRINTF_H

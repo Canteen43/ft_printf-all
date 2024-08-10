@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 16:21:06 by kweihman          #+#    #+#             */
-/*   Updated: 2024/05/31 13:47:56 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/10 17:29:08 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,10 @@
 
 int	main(void)
 {
-	int		nbr;
 	char	*str;
-	char	*ptr;
+	int		nbr;
 
-	*ptr = NULL;
-	str = NULL;
-	printf("Original printf:\n");
-	nbr = printf("%p", ptr);
-	printf("\n%d", nbr);
-	printf("\nMy printf:\n");
-	nbr = ft_printf("%p", ptr);
+	str = "Hello, I am Karl!";
+	nbr = ft_printf("This is my string: %30.5s|End!", str);
 	printf("\n%d\n", nbr);
 }

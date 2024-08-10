@@ -68,5 +68,6 @@ BONUS:
 Manual for original printf: https://man7.org/linux/man-pages/man3/printf.3.html
 
 To do:
-	- Put field width and precision in separate function
-	- write atoi for my purposes
+	- make eval slot
+	- look at pushswap
+	- I can not increase an array. I have to either make it a pointer (and use malloc and free or make it an array of null characters). Or access the values with square brackets.
