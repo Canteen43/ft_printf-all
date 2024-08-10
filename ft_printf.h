@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:33:01 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/08 11:22:36 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/10 12:34:34 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>	// write()
 # include <stdarg.h>	// va_start, va_arg, va_copy, va_end
+# include <limits.h>	// INT_MAX, INT_MIN
 
 typedef struct s_conversion_specifications
 {
