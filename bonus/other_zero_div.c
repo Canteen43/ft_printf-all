@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testmain.c                                         :+:      :+:    :+:   */
+/*   other_zero_div.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 16:21:06 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/10 17:29:08 by kweihman         ###   ########.fr       */
+/*   Created: 2024/08/10 12:22:38 by kweihman          #+#    #+#             */
+/*   Updated: 2024/08/11 13:11:17 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "ft_printf.h"
+
+void	div_and_mod(int a, int b)
+{
+	printf("%d divided by %d equals %d.\n", a, b, a / b);
+	printf("%d modulo %d equals %d.\n\n", a, b, a % b);
+}
 
 int	main(void)
 {
-	char	*str;
-	int		nbr;
-
-	str = "Hello, I am Karl!";
-	nbr = ft_printf("This is my string: %30.5s|End!", str);
-	printf("\n%d\n", nbr);
+	div_and_mod(7, 0);
+	div_and_mod(-7, 3);
+	div_and_mod(7, -3);
+	div_and_mod(-7, -3);
+	return (0);
 }

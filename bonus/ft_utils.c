@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 16:22:08 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/10 15:10:56 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/11 16:52:22 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,15 @@ void	*ft_memset(void *s, int c, size_t n)
 
 int	lmt_check(int value, char next)
 {
-	if (value >= 0)
+	if (value == 0)
+		return (0);
+	if (value > 0)
 	{
 		if (INT_MAX / value < 10)
 			return (-1);
 		if (INT_MAX / value > 10)
 			return (0);
-		if (INT_MAX / value > 10)
+		if (INT_MAX / value == 10)
 			if (INT_MAX % value < next - '0')
 				return (-1);
 	}
@@ -62,24 +64,9 @@ int	lmt_check(int value, char next)
 			return (-1);
 		if (INT_MIN / value > 10)
 			return (0);
-		if (INT_MIN / value > 10)
+		if (INT_MIN / value == 10)
 			if (INT_MIN % value > next - '0')
 				return (-1);
 	}
-}
-
-int	min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	else
-		return (b);
-}
-
-int	max(int a, int b)
-{
-	if (a >= b)
-		return (a);
-	else
-		return (b);
+	return (0);
 }

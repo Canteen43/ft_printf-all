@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 15:10:50 by kweihman          #+#    #+#             */
-/*   Updated: 2024/08/10 17:10:57 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/08/11 16:34:18 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,44 @@
 // In clang, "#0+ " all give "unspecified behavior" warnings, 
 //  so I decided they will return error.
 // Printf manual only states "unspecified behavior" for "#0".
-int	ft_convert_s(char *str, int *p_bytes_printed, t_specs *psp)
+int	ft_convert_s(char *str, int *pbp, t_sp *psp)
 {
-	if (chars_in_str("#0+ ", psp->flags))
+	if (chars_in_str("#0+ ", psp->fl))
 		return (-1);
 	if (str == NULL)
 	{
-		str = "(null)";
-		psp->precision = 6;
+		if (psp->pr >= 0 && psp->pr <= 5)
+			str = "";
+		else
+			str = "(null)";
 	}
-	psp->precision = set_length(str, psp->precision);
-	if (char_in_str('-', psp->flags) == 1 && psp->field_width > psp->precision)
-		put_fillers(' ', psp->field_width - psp->precision, p_bytes_printed);
-	write_str(str, p_bytes_printed, psp->precision);
-	if (char_in_str('-', psp->flags) == 0 && psp->field_width > psp->precision)
-		put_fillers(' ', psp->field_width - psp->precision, p_bytes_printed);
+	psp->pr = set_length(str, psp->pr);
+	if (char_in_str('-', psp->fl) == 1 && psp->fw > psp->pr)
+		put_fillers(' ', psp->fw - psp->pr, pbp);
+	write_str(str, pbp, psp->pr);
+	if (char_in_str('-', psp->fl) == 0 && psp->fw > psp->pr)
+		put_fillers(' ', psp->fw - psp->pr, pbp);
+	return (0);
 }
 
-void	write_str(char *str, int *p_bytes_printed, int prec)
+void	write_str(char *str, int *pbp, int prec)
 {
 	while (prec != 0)
 	{
 		write(1, str, 1);
 		str++;
-		(*p_bytes_printed)++;
+		(*pbp)++;
 		prec--;
 	}
 }
 
-void	put_fillers(char filler, int amount, int *p_bytes_printed)
+void	put_fillers(char filler, int amount, int *pbp)
 {
 	while (amount != 0)
 	{
 		write(1, &filler, 1);
 		amount--;
-		(*p_bytes_printed)++;
+		(*pbp)++;
 	}
 }
 

@@ -67,7 +67,20 @@ BONUS:
 
 Manual for original printf: https://man7.org/linux/man-pages/man3/printf.3.html
 
+Printf seems to work fine for the s conversion now. I still have to do the following conversions:
+	c - putchar
+	p - cast to long int, then putlongintashex
+	di- int
+	u - unsigned int
+	x - unsigned hexadecimal, capital letters for X
+		accepted flags:	"0-#"
+		not accepted: "+ "
+		together "0-" produce a warning
+			I will throw an error.
+		# - a nonzero result has the string "0x" (or "0X" for X conversions) prepended to it
+
 To do:
-	- make eval slot
-	- look at pushswap
-	- I can not increase an array. I have to either make it a pointer (and use malloc and free or make it an array of null characters). Or access the values with square brackets.
+	try x_conversion
+
+		understand flag logic
+		do tests with clang
