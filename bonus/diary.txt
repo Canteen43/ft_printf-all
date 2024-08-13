@@ -79,8 +79,21 @@ Printf seems to work fine for the s conversion now. I still have to do the follo
 			I will throw an error.
 		# - a nonzero result has the string "0x" (or "0X" for X conversions) prepended to it
 
+Thoughts on Error handling:
+	Mission: Recode Printf
+	BUT: Recoding trash is trash.
+	So: Just pick any consistent, explainable behavior.
+		Like giving error for everything that results in a clang warning.
+	Also: People are gonna look at what the tester says.
+
+
+
 To do:
+	Continue with conversions and return error for warnings.
 	try x_conversion
 
 		understand flag logic
 		do tests with clang
+	maybe add function that instead of writing to stdout, adds
+	 characters to a saved string and only prints that string in
+	 the end when no error occurred
